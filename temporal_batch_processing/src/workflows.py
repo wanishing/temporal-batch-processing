@@ -159,8 +159,6 @@ class MainWorkflow:
 
         await asyncio.gather(*clean_up_activities)
 
-        await workflow.wait_condition(workflow.all_handlers_finished)
-
     @staticmethod
     async def _create_partitions(batch_request: BatchProcessingRequest) -> List[PartitionInfo]:
 
