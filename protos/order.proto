@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package order;
+
+service OrderService {
+  rpc EnrichOrder (EnrichOrderRequest) returns (EnrichOrderResponse) {}
+}
+
+message EnrichOrderRequest {
+  string order_id = 1;
+  string email = 2;
+  string created_at = 3;
+}
+
+message EnrichOrderRequests {
+  repeated EnrichOrderRequest requests = 1;
+}
+
+message EnrichOrderResponse {
+  string order_id = 1;
+  string status = 2;
+  string message = 3;
+}

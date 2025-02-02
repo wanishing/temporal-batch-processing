@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "temporal-batch-processing"
+version = "0.1.0"
+description = ""
+authors = ["talwanish <tal.wanish@riskified.com>"]
+readme = "README.md"
+include = ["protos/.proto"]
+
+[tool.poetry.dependencies]
+python = "^3.13"
+temporalio = "^1.9.0"
+duckdb = "^1.1.3"
+boto3 = "^1.36.6"
+
+
+[tool.poetry.group.dev.dependencies]
+grpcio = "^1.70.0"
+grpcio-tools = "^1.70.0"
+mypy-protobuf = "^3.6.0"
+protoletariat = "^3.3.9"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.4"
+pytest-asyncio = "^0.25.2"
+moto = {extras = ["server"], version = "^5.0.27"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+generate-orders = "temporal_batch_processing.scripts.generate_orders_for_test:run"
+generate-many-orders = "temporal_batch_processing.scripts.generate_orders_for_test:run_many_orders"
+generate-proto = "temporal_batch_processing.scripts.generate_protos:generate_protos"
+order-service = "temporal_batch_processing.tests.fake_order_service:run"
+fake-s3 = "temporal_batch_processing.scripts.fake_s3:run"
+temporal-server = "temporal_batch_processing.scripts.start_temporal_dev_server:run"
+temporal-worker = "temporal_batch_processing.src.worker:run"
