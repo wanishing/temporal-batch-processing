@@ -5,8 +5,6 @@ import duckdb
 
 from temporal_batch_processing.src.models.config import Config
 
-EXPIRATION_IN_SECONDS = 60 * 55
-
 
 class DuckDBClient:
     _instance: Optional['DuckDBClient'] = None
