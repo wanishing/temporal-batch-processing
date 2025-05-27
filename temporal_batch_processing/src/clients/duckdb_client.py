@@ -2,7 +2,6 @@ from typing import Optional
 from urllib.parse import urlparse
 
 import duckdb
-
 from temporal_batch_processing.src.models.config import Config
 
 
