@@ -4,7 +4,7 @@ This project demonstrates how to implement a batch-processing workflow using tem
 
 ## Project Overview
 
-For a full description of this project, you are welcome to read the accompanying medium blogpost.
+For a full description of this project, you are welcome to read the accompanying [medium blogpost](https://medium.com/riskified-technology/a-story-of-million-rows-building-a-lightweight-batch-pipeline-with-temporal-and-duckdb-3c0a8aa88cca).
 
 ## Running Integration Tests
 
