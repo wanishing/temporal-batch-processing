@@ -2,7 +2,6 @@ from typing import List
 
 from temporalio import activity
 
-from temporal_batch_processing.src.commands.clean_table_command import CleanTableCommand
 from temporal_batch_processing.src.commands.create_partitions_command import (
     CreatePartitionsCommand,
 )
