@@ -28,17 +28,20 @@ def _ensure_directory(base_dir: str) -> None:
 def _fix_imports(target_dir: str, schemas_dir: str, target_files: List[str]) -> None:
     print("\n=== Fixing relative imports ===")
     print(f"Target directory: {target_dir}")
-    subprocess.run([
-        'protol',
-        '--create-package',
-        '--in-place',
-        '--exclude-google-imports',
-        f'--python-out',
-        target_dir,
-        'protoc',
-        f'--proto-path={schemas_dir}',
-        *target_files
-    ], check=True)
+    subprocess.run(
+        [
+            "protol",
+            "--create-package",
+            "--in-place",
+            "--exclude-google-imports",
+            "--python-out",
+            target_dir,
+            "protoc",
+            f"--proto-path={schemas_dir}",
+            *target_files,
+        ],
+        check=True,
+    )
     print("Finished fixing relative imports")
 
 
@@ -53,12 +56,12 @@ def generate_protos():
 
 def _compile_protos():
     protoc_args = [
-        'grpc_tools.protoc',
-        f'--proto_path={PROTO_DIR}',
-        f'--python_out={DESTINATION_DIR}',
-        f'--mypy_out={DESTINATION_DIR}',
-        f'--grpc_python_out={DESTINATION_DIR}',
-        f'{PROTO_DIR}/{PROTO_FILE}'
+        "grpc_tools.protoc",
+        f"--proto_path={PROTO_DIR}",
+        f"--python_out={DESTINATION_DIR}",
+        f"--mypy_out={DESTINATION_DIR}",
+        f"--grpc_python_out={DESTINATION_DIR}",
+        f"{PROTO_DIR}/{PROTO_FILE}",
     ]
     print("Executing protoc with arguments:\n" + " \\\n".join(protoc_args))
     print()

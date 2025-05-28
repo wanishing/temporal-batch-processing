@@ -6,7 +6,7 @@ from temporal_batch_processing.src.models.config import Config
 
 
 class DuckDBClient:
-    _instance: Optional['DuckDBClient'] = None
+    _instance: Optional["DuckDBClient"] = None
     _connection: Optional[duckdb.DuckDBPyConnection] = None
 
     def __new__(cls, connection: duckdb.DuckDBPyConnection):
