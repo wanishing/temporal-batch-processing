@@ -28,5 +28,5 @@ def get_config():
         aws_session_token=os.environ.get("AWS_SESSION_TOKEN", None),
         aws_verify=os.environ.get("AWS_VERIFY", "false").lower() == "true",
         order_service_host=os.environ.get("ORDER_SERVICE_HOST", "localhost"),
-        order_service_port=os.environ.get("ORDER_SERVICE_PORT", "7070")
+        order_service_port=os.environ.get("ORDER_SERVICE_PORT", "7070"),
     )

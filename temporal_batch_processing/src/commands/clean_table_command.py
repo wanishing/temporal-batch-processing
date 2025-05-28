@@ -2,7 +2,6 @@ from temporal_batch_processing.src.clients.duckdb_client import DuckDBClient
 
 
 class CleanTableCommand:
-
     def __init__(self, duckdb_client: DuckDBClient):
         self.duck_db_client = duckdb_client
 

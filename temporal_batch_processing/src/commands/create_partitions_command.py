@@ -5,9 +5,10 @@ from temporal_batch_processing.src.models.partition_info import PartitionInfo
 
 
 class CreatePartitionsCommand:
-
     @staticmethod
-    def run(files_metadata: List[FileMetadata], partition_size: int) -> List[PartitionInfo]:
+    def run(
+        files_metadata: List[FileMetadata], partition_size: int
+    ) -> List[PartitionInfo]:
         partitions = []
 
         for file_info in files_metadata:
@@ -20,7 +21,7 @@ class CreatePartitionsCommand:
                 partition = PartitionInfo(
                     file_info=file_info,
                     start_offset=current_offset,
-                    end_offset=current_offset + current_partition_size
+                    end_offset=current_offset + current_partition_size,
                 )
                 partitions.append(partition)
 
