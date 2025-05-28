@@ -8,7 +8,7 @@ For a full description of this project, you are welcome to read the accompanying
 
 ## Running Integration Tests
 
-To run the integration tests, you'll need to start several services in separate terminal windows:
+Before everything, run `poetry install` to setup the project. To run the integration tests, you'll need to start several services in separate terminal windows:
 
 1. Start the Temporal server:
 ```bash
