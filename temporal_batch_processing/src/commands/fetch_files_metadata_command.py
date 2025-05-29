@@ -17,7 +17,7 @@ class FetchFilesMetadataCommand:
         return cls(duck_db_client=DuckDBClient.build(config))
 
     def run(
-            self, batches_path: FilePath, batches_to_process: List[str]
+        self, batches_path: FilePath, batches_to_process: List[str]
     ) -> List[FileMetadata]:
         files_metadata: List[FileMetadata] = []
         for batch_id, batch_path in enumerate(batches_to_process):
