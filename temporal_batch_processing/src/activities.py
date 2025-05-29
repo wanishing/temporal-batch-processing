@@ -42,11 +42,6 @@ async def create_partitions_activity(
 
 
 @activity.defn
-async def cleanup_temporary_table_activity(table_name: str) -> None:
-    CleanTableCommand.build(get_config()).run(table_name)
-
-
-@activity.defn
 async def read_orders_activity(
     file_info: FileMetadata, start_offset: int, limit: int
 ) -> EnrichOrderRequests:
